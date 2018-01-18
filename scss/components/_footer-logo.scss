@@ -1,0 +1,16 @@
+/* FOOTER LOGOS */
+.footer-logos {
+    .container {
+        display: flex;
+        align-items: center;
+        img {
+            flex: 1;
+            width: 1%;
+            height: 1%;
+            margin-right: 60px;
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+    }
+}

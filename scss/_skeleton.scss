@@ -1,0 +1,159 @@
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
+
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Grid
+- Base Styles
+- Typography
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+- Utilities
+- Clearing
+- Media Queries
+*/
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+	width: 100%;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0px $gutter-base;
+	box-sizing: border-box;
+	@media (min-width: $xs) { width: 100%; }
+	@media (min-width: $sm) { width: $sm; }
+	@media (min-width: $md) { width: $md; }
+	@media (min-width: $lg) { width: $lg; }
+}
+
+.row {
+	margin: 0px (-$gutter-base);
+}
+
+.hidden-xs {
+	@media (max-width: $xs) { display: none; }
+}
+
+.hidden-sm {
+	@media (min-width: $xs) and (max-width: $sm) { display: none; }
+}
+
+.hidden-md {
+	@media (min-width: $sm) and (max-width: $md) { display: none; }
+}
+
+.hidden-lg {
+	@media (min-width: $lg) { display: none; }
+}
+
+// use grid.scss for columns
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	font-weight: 400;
+	font-family: $font-family-base;
+	color: $text-color;
+	overflow-x: hidden;
+	margin: 0px;
+}
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.sr-only,
+.screen-reader-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+	margin-top: $gutter-lg;
+	margin-bottom: $gutter-lg;
+	border-width: 0;
+	border-top: 1px solid darken($white, 10%);
+}
+
+img {
+	max-width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	&:before {
+		content: '';
+		padding-bottom: 50%;
+		background-color: darken($white, 5%);
+		border: 2px solid darken($white, 20%);
+	}
+	&:after {
+		content: 'Image not found';
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		text-align: center;
+		color: darken($white, 25%);
+	}
+	@include states() {
+		&:after {
+			content: attr(src);
+		}
+	}
+}
+
+section {
+	margin-bottom: 60px;
+}
+
+a {
+	color: $text-color;
+}
+
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+	content: "";
+	display: table;
+	clear: both;
+}

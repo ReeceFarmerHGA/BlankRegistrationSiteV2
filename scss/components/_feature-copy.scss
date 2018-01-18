@@ -1,0 +1,67 @@
+/* FEATURE COPY */
+.feature-copy {
+    background: url('http://unsplash.it/1000x800/?alcohol');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    min-height: 600px;
+    .feature-copy__content {
+        position: relative;
+        z-index: 1;
+        background: $white;
+        padding-bottom: 30px;
+        &:before {
+            content: '';
+            display: none;
+            width: 3370px;
+            height: 3370px;
+            background: $white;
+            position: absolute;
+            z-index: -1;
+            // transform: translate(14.7%, 14.7%) rotateZ(45deg);
+            transform: translate(13.5%, 13.5%) rotateZ(45deg);
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        &:after {
+            content: '';
+            display: block;
+            z-index: -1;
+            background: $white;
+            position: absolute;
+            left: -100px;
+            bottom: -100px;
+            width: 200px;
+            height: 200px;
+            transform: rotateZ(45deg);
+        }
+        @include from-width($md) {
+            width: 30%;
+            padding-left: 60px;
+            padding-top: 60px;
+            margin-bottom: 200px;
+            background: none;
+            &:before {
+                display: block;
+            }
+            &:after {
+                display: none;
+            }
+        }
+        h3 {
+            font-size: 44px;
+            line-height: 1.136;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin: 0px;
+            margin-bottom: 30px;
+        }
+        p:first-of-type {
+            margin-top: 0px;
+        }
+        p:last-of-type {
+            margin-bottom: 30px;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+/* ANGLE RIBBON */
+.angle-ribbon {
+    $angle-ribbon-height:        300px;
+    display: flex;
+    flex-direction: column;
+    transform-origin: top;
+    width: calc(100% + #{$angle-ribbon-height});
+    @include from-width($md) {
+        flex-direction: row;
+        transform: skewX(-45deg);
+    }
+    .angle-item {
+        min-height: $angle-ribbon-height;
+        box-sizing: border-box;
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        img {
+            @include abcenter;
+            min-width: 100%;
+            @include from-width($md) {
+                transform: skewX(45deg);
+                min-width: calc(100% + #{$angle-ribbon-height})
+            }
+        }
+        &:first-child {
+            .angle-item__inner {
+                padding-left: 15px;
+            }
+        }
+        &:last-child {
+            .angle-item__inner {
+                padding-right: 15px;
+            }
+        }
+        .angle-item__inner {
+            width: auto;
+            display: block;
+            left: 0;
+            right: $angle-ribbon-height;
+            position: absolute;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            color: $white;
+            font-weight: 100;
+            padding: 0px 15px;
+            align-items: center;
+            @include from-width($md) {
+                transform: skewX(45deg);
+                transform-origin: top;
+                padding: 0px;
+                align-items: flex-start;
+            }
+            p:first-of-type {
+                margin-top: 0px;
+            }
+        }
+    }
+}

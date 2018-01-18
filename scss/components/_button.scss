@@ -1,0 +1,76 @@
+/* BUTTON */
+.btn {
+    padding: 10px 30px;
+    box-sizing: border-box;
+    box-shadow: inset 2px 2px 0px black, inset 0px -2px 0px black;
+    font-size: 14px;
+    text-transform: none;
+    text-decoration: none;
+    position: relative;
+    margin-right: 20px;
+    display: table;
+    font-weight: 400;
+    z-index: 1;
+    @include states() {
+        &:after {
+            right: -30px;
+        }
+    }
+    &:visited {
+        color: $text-color;
+    }
+    &:after {
+        content: '';
+        display: inline-block;
+        box-shadow: inset -1px 2px 0px black, inset -1px -2px 0px black;
+        border-right: 2px solid black;
+        position: absolute;
+        right: -25px;
+        transform: skewX(-45deg);
+        width: 60px;
+        top: 0px;
+        bottom: 0px;
+        z-index: -1;
+        transition: right 0.2s;
+    }
+    &.btn-center {
+        margin: auto;
+    }
+    &.btn-white {
+        background: $white;
+        box-shadow: inset 2px 2px 0px $white, inset 0px -2px 0px $white;
+        &:after {
+            background: $white;
+            border-color: $white;
+            box-shadow: inset 2px 2px 0px $white, inset 0px -2px 0px $white;
+        }
+        @include states() {
+            background: darken($white, 5%);
+            box-shadow: inset 2px 2px 0px darken($white, 5%), inset 0px -2px 0px darken($white, 5%);
+            &:after {
+                background: darken($white, 5%);
+                border-color: darken($white, 5%);
+                box-shadow: inset -1px 2px 0px darken($white, 5%), inset -1px -2px 0px darken($white, 5%);
+            }
+        }
+    }
+    &.btn-black {
+        background: $text-color;
+        box-shadow: inset 2px 2px 0px $text-color, inset 0px -2px 0px $text-color;
+        color: $white;
+        &:after {
+            background: $text-color;
+            border-color: $text-color;
+            box-shadow: inset -1px 2px 0px $text-color, inset -1px -2px 0px $text-color;
+        }
+        @include states() {
+            background: darken($text-color, 5%);
+            box-shadow: inset 2px 2px 0px darken($text-color, 5%), inset 0px -2px 0px darken($text-color, 5%);
+            &:after {
+                background: darken($text-color, 5%);
+                border-color: darken($text-color, 5%);
+                box-shadow: inset -1px 2px 0px darken($text-color, 5%), inset -1px -2px 0px darken($text-color, 5%);
+            }
+        }
+    }
+}

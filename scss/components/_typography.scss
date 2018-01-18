@@ -1,0 +1,32 @@
+/* TYPOGRAPHY */
+h1 {
+    font-size: $font-size-h1;
+    font-weight: 500;
+}
+
+// additional
+.title-center {
+    display: table;
+    margin: auto;
+    text-align: center;
+}
+
+.title-decor {
+    font-size: 44px;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    &:before {
+        content: '';
+        display: block;
+        @include ico('icons/dots-black-small');
+        background-size: contain;
+        width: 18px;
+        height: 5px;
+        margin: auto;
+    }
+}
+
+.text-large {
+    font-size: 18px;
+}

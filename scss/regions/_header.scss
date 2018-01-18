@@ -1,0 +1,115 @@
+/* HEADER */
+header.header {
+    text-transform: uppercase;
+    z-index: 9999;
+    background: $white;
+    nav {
+        ul.primary {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 11px;
+            @include from-width($sm) {
+                font-size: $font-size-base;
+                justify-content: center;
+            }
+            li.nav-item {
+                display: inline-block;
+                padding: 10px;
+                flex: 1;
+                text-align: center;
+                box-sizing: border-box;
+                border-right: 1px solid darken($white, 5%);
+                &:last-child {
+                    border-right: 0px;
+                }
+                @include from-width($sm) {
+                    padding: 30px;
+                    border-right: 0px;
+                }
+                a {
+                    color: $text-color;
+                    text-decoration: none;
+                    position: relative;
+                    margin: auto;
+                    &:before {
+                        content: '';
+                        display: block;
+                        width: 30px;
+                        height: 2px;
+                        background: currentColor;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: -100%;
+                        bottom: -100%;
+                        margin: auto;
+                        transform: rotateZ(-45deg) scaleX(0);
+                        transition: transform 0.2s;
+                    }
+                    &:hover,
+                    &:focus,
+                    &.active {
+                        &:before {
+                            transform: rotateZ(-45deg) scaleX(1);
+                        }
+                    }
+                }
+                &.logo {
+                    order: -1;
+                    border-right: 0px;
+                    @include from-width($sm) {
+                        order: unset;
+                    }
+                    a {
+                        width: 100px;
+                        height: 46px;
+                        display: block;
+                        text-indent: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        background: {
+                            image: url('logo.svg');
+                            repeat: no-repeat;
+                            size: contain;
+                            position: center;
+                        }
+                        &:before {
+                            display: none;
+                        }
+                        @include from-width($sm) {
+                            width: 160px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.sticky {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		transition: all 0.2s;
+        li.nav-item {
+            transition: padding 0.2s;
+            a {
+                transition: height 0.2s;
+            }
+        }
+		&--stuck {
+            nav {
+                ul.primary {
+                    li.nav-item {
+                        padding: 10px;
+                        a {
+                            height: 35px;
+                        }
+                    }
+                }
+            }
+		}
+	}
+}

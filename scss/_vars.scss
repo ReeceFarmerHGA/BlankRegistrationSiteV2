@@ -1,0 +1,70 @@
+/**
+ * CUSTOM VARIABLES
+ *
+ *	All variables should be configured in this file.
+ *	Use variables rather than hard values to maintain consistency throughout the design
+ *	and allow more flexiblity when updating and making tweaks.
+ *
+ */
+
+// Enviroment
+$dev_enviroment:			true;
+$website_url: 				if($dev_enviroment != true, "https://wordpress-base-theme.co.uk", "http://moethennessy.dev/");
+$theme_dir:					'';
+
+// Colours
+$trueblack:                 #000;
+$white:						#fff;
+$black:						#333;
+$blue:						#5bc0de;
+$darkblue:					#337ab7;
+$green:						#5cb85c;
+$yellow:					#f0ad4e;
+$red:						#d9534f;
+$pink:						#e50065;
+$orange:					#F26B0F;
+
+$lightergrey:               #939598;
+$lightgrey:					#6D6E71;
+$grey:						#4D4D4D;
+$darkgrey:                  #212121;
+
+$brand-primary:				$darkgrey;
+$brand-secondary:			$blue;
+$brand-success:				$green;
+$brand-warning:				$yellow;
+$brand-error:				$red;
+
+$text-color:				$darkgrey;
+
+// Breakpoints and grid
+$xs:						540px;
+$sm:						720px;
+$md:						960px;
+$lg:						1140px;
+
+$columns:					12;
+
+$gutter-base: 				15px;
+$gutter-sm: 				7.5px;
+$gutter-lg:					30px;
+$gutter-xl:					60px;
+
+// Fonts
+$font-family-base:			"futura-pt";
+$font-size-large:           18px;
+$font-size-base:			16px;
+$font-size-small:			12px;
+$font-size-smaller:			11px;
+
+$line-height-base:			1.6;
+
+$font-size-h1:				22px;
+$font-size-h2:				20px;
+$font-size-h3:				16px;
+$font-size-h4:				14px;
+$font-size-h5:				14px;
+$font-size-h6:				10px;
+
+// Radius
+$border-radius-base:		4px;

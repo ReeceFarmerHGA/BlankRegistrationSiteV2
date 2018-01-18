@@ -1,0 +1,80 @@
+/* FEATURE GROUP */
+.feature-group {
+    .feature-item {
+        display: flex;
+        flex-direction: column;
+        @include from-width($sm) {
+            flex-direction: row;
+            &:nth-child(2n) {
+                .feature-item__image {
+                    &:before {
+                        top: auto;
+                        left: auto;
+                        right: -75px;
+                        bottom: -75px;
+                    }
+                    &:after {
+                        top: auto;
+                        left: auto;
+                        bottom: 0px;
+                        right: 0px;
+                    }
+                }
+                .feature-item__content {
+                    order: -1;
+                }
+            }
+        }
+        .feature-item__content,
+        .feature-item__image {
+            width: 100%;
+            @include from-width($sm) {
+                width: 50%;
+            }
+        }
+        .feature-item__image {
+            min-height: 300px;
+            background: url('https://unsplash.it/400/400/?random');
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            &:before {
+                content: '';
+                display: block;
+                width: 150px;
+                height: 150px;
+                position: absolute;
+                top: -75px;
+                left: -75px;
+                background: $white;
+                transform: rotateZ(45deg);
+            }
+            &:after {
+                content: '';
+                @include ico('icons/plus-black');
+                background-size: contain;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .feature-item__content {
+            box-sizing: border-box;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .content__inner {
+                font-size: 27px;
+                font-weight: 300;
+                line-height: 1.136;
+                .btn {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}

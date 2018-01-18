@@ -1,0 +1,17 @@
+/* FULL VIDEO */
+.full-video {
+    background: #333;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    &:after {
+        content: '';
+        background-color: $white;
+        width: 200px;
+        height: 200px;
+        transform: rotateZ(45deg);
+        position: absolute;
+        bottom: -100px;
+        right: -100px;
+    }
+}
